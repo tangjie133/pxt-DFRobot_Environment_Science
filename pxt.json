@@ -1,0 +1,31 @@
+{
+    "name": "EnvironmentScience",
+    "version": "0.7.1",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "README.md",
+        "ws2812b.ts",
+        "sendBuffer.asm",
+        "i2c.cpp",
+        "naturalscience.ts",
+        "_locales/zh-cn/EnvironmentScience-strings.json",
+        "_locales/zh-tw/EnvironmentScience-strings.json",
+        "shims.d.ts",
+        "enums.d.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "5.0.12",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
+}
