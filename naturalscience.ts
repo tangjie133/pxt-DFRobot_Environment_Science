@@ -188,8 +188,8 @@ namespace naturalScience {
     //% blockId=naturalScience_requstdata block="requst data"
     export function requstdata(): void {
         pins.i2cWriteNumber(0x10, 8, NumberFormat.Int8LE);
-        let _data = pins.i2cReadBuffer(0x10, 22)
-        for (let i = 0; i < 26; i++) {
+        let _data = pins.i2cReadBuffer(0x10, 27)
+        for (let i = 0; i < 28; i++) {
             data[i] = _data[i]
         }
         basic.pause(50);
@@ -288,6 +288,16 @@ namespace naturalScience {
     //% blockId=naturalScience_TDS block="TDS"
     export function getTDS(): number {
         return (data[16] << 8) | data[17]
+    }
+
+    //% weight=95
+    //% group="Sensor"
+    //% blockId=naturalScience_LUX block="LUX"
+    export function getLux(): number {
+        let lux = data[24]<<16 | (data[25]<<8)|data[26]
+        let _lux = 0
+        _lux = lux * 0.6 / 18 / 0.5
+        return Math.round(_lux)
     }
 
     /**
