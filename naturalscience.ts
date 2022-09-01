@@ -296,7 +296,7 @@ namespace naturalScience {
     export function getLux(): number {
         let lux = data[24]<<16 | (data[25]<<8)|data[26]
         let _lux = 0
-        _lux = lux * 0.6 / 18 / 0.5
+        _lux = lux * 0.6 / 18 / 1
         return Math.round(_lux)
     }
 
