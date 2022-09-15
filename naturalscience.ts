@@ -832,7 +832,6 @@ namespace naturalScience {
                 if ((currentTime - startTime) > 20000)
                     return;
             }
-
         }
     }
 
@@ -896,7 +895,7 @@ namespace naturalScience {
         microIoT_runCommand(CONNECT_MQTT);
         microIoT_CheckStatus("MQTTConnected");
         serial.writeString("mqtt connected\r\n");
-      
+        basic.pause(100);
         Topic_0 = IOT_TOPIC
         microIoT_ParaRunCommand(SUB_TOPIC0, IOT_TOPIC);
         microIoT_CheckStatus("SubTopicOK");
@@ -1140,22 +1139,22 @@ namespace naturalScience {
                     microIoTStatus = "WiFiConnecting"
                 } else if (tempStatus == WIFI_CONNECTED) {
                     microIoTStatus = "WiFiConnected"
-                } else if (tempStatus == WIFI_DISCONNECT ) {
+                } else if (tempStatus == WIFI_DISCONNECT) {
                     microIoTStatus = "WiFiDisconnect"
                     wifiConnected++;
-                    if (wifiConnected == 2){
+                    if (wifiConnected == 2) {
                         wifiConnected = 0;
                         microIoT_runCommand(WIFI_CONNECTED);
                     }
-                } else{
-                }break;
+                } else {
+                } break;
             case READ_MQTTSTATUS:
                 if (tempStatus == MQTT_CONNECTED) {
                     microIoTStatus = "MQTTConnected"
                     mqttState = 1;
                 } else if (tempStatus == MQTT_CONNECTERR) {
                     microIoTStatus = "MQTTConnectERR"
-                    
+
                 } else if (tempStatus == 0) {//新版本修复重连
                     microIoT_runCommand(DISCONNECT_MQTT);
                     microIoT_runCommand(WIFI_CONNECTED);
@@ -1225,11 +1224,12 @@ namespace naturalScience {
                 microIoTStatus = "READ_VERSION"
                 microIoT_GetData(tempStatus)
                 break;
-            default: 
+            default:
                 break;
         }
         basic.pause(200);
     }
+
     basic.forever(function () {
         microIoT_InquireStatus();
     })
@@ -1243,5 +1243,4 @@ namespace naturalScience {
         //microIoT_CheckStatus("READ_VERSION");
         return RECDATA
     }
-
 }
