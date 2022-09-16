@@ -828,10 +828,10 @@ namespace naturalScience {
                 return;
             }
             basic.pause(50);
-            if (versionState == 1) {
+            //if (versionState == 1) {
                 if ((currentTime - startTime) > 20000)
                     return;
-            }
+            //}
         }
     }
 
