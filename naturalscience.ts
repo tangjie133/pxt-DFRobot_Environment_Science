@@ -862,6 +862,7 @@ namespace naturalScience {
         microIoT_runCommand(CONNECT_WIFI)
         microIoT_CheckStatus("WiFiConnected");
         Wifimode = WIFI_CONNECTED
+        basic.pause(300)
     }
 
     /**

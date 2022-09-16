@@ -15,7 +15,8 @@
         "_locales/zh-cn/EnvironmentScience-strings.json",
         "_locales/zh-tw/EnvironmentScience-strings.json",
         "shims.d.ts",
-        "enums.d.ts"
+        "enums.d.ts",
+        "main.py"
     ],
     "testFiles": [
         "test.ts"
