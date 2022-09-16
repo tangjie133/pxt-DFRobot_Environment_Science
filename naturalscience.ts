@@ -144,19 +144,19 @@ namespace naturalScience {
         let Version_v = 0;
         pins.i2cWriteNumber(0x10, 0X0A, NumberFormat.Int8LE);
         Version_v = pins.i2cReadNumber(0x10, NumberFormat.Int8LE);
-        while (Version_v == 0) {
-            basic.showLeds(`
-                # . . . #
-                . # . # .
-                . . # . .
-                . # . # .
-                # . . . #
-                `, 10)
-            basic.pause(500)
-            basic.clearScreen()
-            pins.i2cWriteNumber(0x10, 0x0A, NumberFormat.Int8LE);
-            Version_v = pins.i2cReadNumber(0x10, NumberFormat.Int8LE);
-        }
+        // while (Version_v == 0) {
+        //     basic.showLeds(`
+        //         # . . . #
+        //         . # . # .
+        //         . . # . .
+        //         . # . # .
+        //         # . . . #
+        //         `, 10)
+        //     basic.pause(500)
+        //     basic.clearScreen()
+        //     pins.i2cWriteNumber(0x10, 0x0A, NumberFormat.Int8LE);
+        //     Version_v = pins.i2cReadNumber(0x10, NumberFormat.Int8LE);
+        // }
         basic.showLeds(`
                 . . . . .
                 . . . . #
@@ -862,7 +862,7 @@ namespace naturalScience {
         microIoT_runCommand(CONNECT_WIFI)
         microIoT_CheckStatus("WiFiConnected");
         Wifimode = WIFI_CONNECTED
-        basic.pause(300)
+        //basic.pause(300)
     }
 
     /**
