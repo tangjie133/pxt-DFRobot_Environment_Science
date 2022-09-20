@@ -51,10 +51,15 @@ namespace naturalScience {
         neopixel_buf[i] = 0
     }
    
+    //% advanced=true shim=i2c::init
+    function init(): void {
+        return;
+    }
+    
     //% weight=120
     //%block="initialize Board"
     export function i2cinit(): void {
-        
+        init();
         let Version_v = 0;
         pins.i2cWriteNumber(0x10, 0X0A, NumberFormat.Int8LE);
         Version_v = pins.i2cReadNumber(0x10, NumberFormat.Int8LE);
@@ -343,7 +348,7 @@ namespace naturalScience {
         buffer[0] = 0x28
         buffer[1] = valuerow;
         buffer[2] = valuecolumnstart;
-        serial.writeValue("ff", valuecolumnstart)
+        //serial.writeValue("ff", valuecolumnstart)
         for (let i = 0; i < datalength; i++) {
             buffer[i + 3] = 32;
         }
