@@ -4,7 +4,7 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "iot": "github:tangjie133/pxt-DFRobot_WiFi_IOT#v0.1.1"
+        "iot": "github:tangjie133/pxt-DFRobot_WiFi_IOT#v0.2.0"
     },
     "files": [
         "README.md",
