@@ -4,7 +4,7 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "radio": "*"
+        "ir": "github:tangjie133/pxt-DFRobot_WiFi_IOT#v0.1.1"
     },
     "files": [
         "README.md",
@@ -16,7 +16,8 @@
         "_locales/zh-tw/EnvironmentScience-strings.json",
         "shims.d.ts",
         "enums.d.ts",
-        "main.py"
+        "main.py",
+        "main.ts"
     ],
     "testFiles": [
         "test.ts"

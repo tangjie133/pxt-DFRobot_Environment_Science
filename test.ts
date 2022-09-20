@@ -1,29 +1,3 @@
-input.onButtonPressed(Button.A, function () {
-    naturalScience.microIoT_SendMessage("78", naturalScience.TOPIC.topic_0)
-})
-input.onButtonPressed(Button.AB, function () {
-    naturalScience.microIoT_http_post("12", "344", "44")
-})
-input.onButtonPressed(Button.B, function () {
-    naturalScience.microIoT_http_TK_GET(
-    "95",
-    "12",
-    "8",
-    "",
-    "",
-    "",
-    ""
-    )
-})
-naturalScience.microIoT_WIFI("hitest", "12345678")
-naturalScience.microIoT_ThingSpeak_configura("yourKey")
-naturalScience.microIoT_http_IFTTT("BBB", "dtpfTlU3Wqa8y0HRh77xXE")
-naturalScience.microIoT_MQTT(
-"rHpr0RcWR",
-"9NtrAg5ZRz",
-"DN5FYlDZR",
-naturalScience.SERVERS.China
-)
 naturalScience.setTDSK(1.1)
 naturalScience.mototRun(DIR.CW, 100)
 basic.forever(function () {
