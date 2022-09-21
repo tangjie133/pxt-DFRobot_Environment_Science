@@ -101,7 +101,13 @@ namespace naturalScience {
     //% group="Sensor"
     //% blockId=naturalScience_ultraviolet block="ultraviolet"
     export function getUltraviolet(): string {
-        return data[0] + '.' + data[1];
+        let retdata = "0.0"
+        if (data[1] < 10){
+            retdata = data[0] + '.0' + data[1];
+        }else{
+            retdata = data[0] + '.' + data[1];
+        }
+        return retdata;
     }
 
     /**
@@ -348,7 +354,6 @@ namespace naturalScience {
         buffer[0] = 0x28
         buffer[1] = valuerow;
         buffer[2] = valuecolumnstart;
-        //serial.writeValue("ff", valuecolumnstart)
         for (let i = 0; i < datalength; i++) {
             buffer[i + 3] = 32;
         }
